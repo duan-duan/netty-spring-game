@@ -20,9 +20,7 @@ public class NettyServerStart
   private static int port;
   public static ApplicationContext factory;
 
-  public static void main(String[] args)
-    throws Exception
-  {
+  public static void main(String[] args) throws Exception {
     DOMConfigurator.configureAndWatch("config/log4j.xml");
     if (args.length > 0)
       port = Integer.parseInt(args[0]);
@@ -32,9 +30,7 @@ public class NettyServerStart
     run();
   }
 
-  private static void run()
-    throws Exception
-  {
+  private static void run() throws Exception{
     factory = new FileSystemXmlApplicationContext("config/propholder.xml");
     ServerInitializer initializer = (ServerInitializer)factory.getBean(ServerInitializer.class);
 
